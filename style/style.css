@@ -1,0 +1,117 @@
+body{
+    background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+    font-family: sans-serif;
+}
+
+.section-main {
+    margin-top: 5%;
+}
+
+.div-main {
+    display: flex;
+    justify-content: center;
+}
+
+.div-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    position: relative;
+    margin: 10px;
+    background-color: white;
+    width: 304px;
+    height: 470px;
+    border-radius: 8px;
+}
+
+.prod-img {
+    margin: 32px;
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.btn-circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: #F2F3F6;
+    right: 32px;
+    top: 32px;
+    color: black;
+    font-size: 42px;
+    text-align: center;
+    background-position: center;
+    margin: auto;
+}
+
+.btn-circle:hover {
+    color: #DA4B4F;
+}
+
+.btn-circle:focus {
+    background-color: #DA4B4F;
+    color: #FEE5EC;
+}
+.btn-circle:focus {
+    background-color: #DA4B4F;
+    color: #FEE5EC;
+}
+
+.prod-name {
+    margin: 0 32px 24px 32px;
+    font-size: 14px;
+}
+
+.price-old {
+    margin: 0 32px 4px 32px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.005em;
+    text-decoration-line: line-through;
+    color: #B5B5B6;
+}
+
+.price-new {
+    margin: 0 32px 4px 32px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #DA4B4F;
+}
+
+.installments {
+    margin: 0 32px 32px 32px;
+    line-height: 16px;
+    color: #848587;
+}
+
+b .installments {
+    color: black;
+    font-weight: bold;
+}
+
+#btn-add {
+    margin: 0 32px 32px 32px;
+    Padding: 12px, 24px, 12px, 24px;
+    width: 240px;
+    height: 48px;
+    background-color: #40B25C;
+    color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+#btn-add:hover {
+    background-color: #1C6C3E;
+}
+
+.press-button {
+    color: #1C1C1C;
+    background-color: #A3F9B9
+}
+
+
