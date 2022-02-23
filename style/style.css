@@ -33,6 +33,11 @@ body{
     max-height: 240px;
 }
 
+.selectedWishlist {
+    background-Color: red;
+    color: black;
+}
+
 .btn-circle {
     position: absolute;
     border-radius: 50%;
@@ -52,10 +57,6 @@ body{
     color: #DA4B4F;
 }
 
-.btn-circle:focus {
-    background-color: #DA4B4F;
-    color: #FEE5EC;
-}
 .btn-circle:focus {
     background-color: #DA4B4F;
     color: #FEE5EC;
@@ -94,6 +95,11 @@ b .installments {
     font-weight: bold;
 }
 
+.selected {
+    background-color: #A3F9B9;
+    color: black;
+}
+
 #btn-add {
     margin: 0 32px 32px 32px;
     Padding: 12px, 24px, 12px, 24px;
@@ -113,5 +119,9 @@ b .installments {
     color: #1C1C1C;
     background-color: #A3F9B9
 }
+
+
+
+
 
 

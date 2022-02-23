@@ -16,45 +16,57 @@ function productRender(products){
         productCard.innerHTML = 
         `
             <img class="prod-img" src="${product.imageUrl}" alt="">
-            <button class="btn-circle" onclick="submitButtonStyle()">&#9825</button>
+            <button class="btn-circle"">&#9825</button>
             <p class="prod-name">${product.productName}</p>
             <p class="price-old">R$ ${product.listPrice ? product.listPrice : "0"}</p>
-            <p class="price-new">${product.price}</p>
+            <p class="price-new">${currencyMaster(product.price)}</p>
             <p class="installments">${product.installments.lenght ? `em até ${product.installments[0].quantity}x de ${product.installments[0].value} sem juros`:""} </p>
             <button class="add-button" id="btn-add">ADICIONAR</button>
         `
         productCards.appendChild(productCard)
         }
-        addProduct()
-        btncircle()
+        let wishlistButton = document.querySelectorAll(".btn-circle")
+        let buyButton = document.querySelectorAll(".add-button")
+        addProduct(buyButton)
+        btncircle(wishlistButton)
         currencyMaster()
 }
 
-async function addProduct(){
-    let buttons = await document.querySelectorAll(".add-button")
-    buttons.forEach(function(item,index){
+function addProduct(){
+    let buttons = document.querySelectorAll(".add-button")
+    buttons.forEach(function(item){
         item.addEventListener("click", function(){
-            item.innerHTML = " &#10004 ADCIONADO"
-            this.style.backgroundColor = "#A3F9B9"
-            this.style.color = "black"
+            if (item.classList.contains("selected")){
+                item.classList.remove("selected")
+                item.textContent = "ADCIONAR"
+            }
+            else {
+                item.classList.add("selected")
+                item.innerHTML = " &#10004 ADCIONADO"
+            }
         })
     })
 }
 
 function btncircle(){
-    document.querySelectorAll(".btn-circle").forEach(function(btn) {
-        btn.addEventListener("click", function() {
-            this.style.backgroundColor = "red";
-            this.style.color = "white"
+    let wishlistBtn = document.querySelectorAll(".btn-circle")
+    wishlistBtn.forEach(function(btn) {
+        btn.addEventListener("click", function(){
+            if (btn.classList.contais("selectedWishlist")){
+                btn.classList.remove("selectedWishlist")
+            }
+            else{
+                btn.classList.add("selectedWishlist")
+            }
         })
     })
 }
-function currencyMaster(){
-    let formatter = new Intl.NumberFormat([], {
+
+function currencyMaster(convertCurrency){
+    return (convertCurrency / 100).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
     })
-    let currency = document.getElementsByClassName("price-new")[0].innerHTML
-        console.log(formatter.format(currency))
+
 }
 fetchApiData()
